@@ -1,0 +1,20 @@
+Query the list of CITY names ending with vowels (a, e, i, o, u) from STATION. Your result cannot contain duplicates
+
+Solution 
+1st one comprising of REGEX
+
+SELECT DISTINCT CITY
+FROM STATION
+WHERE CITY REGEXP '[AEIOU]$';
+
+2ND CONTAINING LIKE 
+
+SELECT DISTINCT CITY
+FROM STATION
+WHERE (CITY LIKE '%A')OR (CITY LIKE '%E') OR (CITY LIKE '%I') OR (CITY LIKE '%O')
+OR (CITY LIKE '%U');
+
+3RD SOLUTION
+SELECT DISTINCT CITY
+FROM STATION
+WHERE RIGHT(LOWER(CITY,1)) IN ('a','e','i','o','u');
