@@ -1,0 +1,15 @@
+Question : Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION.
+Solution : 1ST Contains Like 
+SELECT  CITY
+FROM STATION
+WHERE (CITY LIKE "A%") OR (CITY LIKE "E%") OR (CITY LIKE "I%") OR (CITY LIKE "O%") OR (CITY LIKE "U%");
+
+2nd By Regex :  
+SELECT CITY
+FROM STATION
+WHERE CITY REGEXP '^[AEIOU]';------------------------ ^(or the caret)  matching the starting of the city 
+
+3RD Solution by using SUBSTR 
+SELECT CITY 
+FROM STATION 
+WHERE SUBSTR(CITY,1,1) IN ('A','E','I','O','U'); ---------------------------------->> Here SUBSTR(City,1,1) means it will check for 1st position to the first position only.
